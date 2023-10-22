@@ -83,3 +83,21 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+date_default_timezone_set('Asia/Singapore');
+define('DATE_DISPLAY_FORMAT', 'F d, Y');
+define('DATE_TIME_DISPLAY_FORMAT', 'F d, Y h:m a');
+define('DATE_NOW', date('Y-m-d'));
+define('YEAR_NOW', date('Y'));
+define('MONTH_NOW', date('F'));
+define('NOW', date('Y-m-d H:i:s'));
+
+const SYSTEM_TITLE = 'Automated Yearbook System';
+const SYSTEM_VERSION = '0.0.1';
+const RESULT_FAILED = 0;
+const RESULT_SUCCESS = 1;
+const BOOL_NO = 0;
+const BOOL_YES = 1;
+const DEFAULT_ADMIN_ID = 1;
+const ROLE_ADMINISTRATOR = 1;
+const ROLE_STUDENT = 2;
