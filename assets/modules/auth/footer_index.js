@@ -1,7 +1,12 @@
 $(function () {
 	const signInAdminFormEl = $('#sign_in_admin_form');
+	const signInStudentFormEl = $('#sign_in_student_form');
 
-	signInAdminFormEl.on('submit', function (e) {
+	if (RESULT_STATUS) {
+		toastr.success(RESULT_MESSAGE, 'Success!');
+	}
+
+	signInStudentFormEl.on('submit', function (e) {
 		e.preventDefault();
 
 
@@ -9,7 +14,7 @@ $(function () {
 			return;
 
 		$.ajax({
-			url: `${BASE_URL}auth/index/` + ROLE_ADMINISTRATOR,
+			url: `${BASE_URL}auth/index`,
 			type: 'POST',
 			async: true,
 			data: $(this).serialize(),
@@ -24,7 +29,53 @@ $(function () {
 						text: response.message,
 						icon: 'success'
 					}).then(function () {
-						location.reload();
+						location.href = response.redirect_url;
+					});
+					return;
+				}
+				Swal.fire({
+					title: 'Failed!',
+					text: response.message,
+					icon: 'error'
+				});
+			},
+			error: function (result) {
+				Swal.fire({
+					title: 'Failed!',
+					text: 'Error has been occurred, Please try again later.',
+					icon: 'error'
+				});
+			},
+			complete: function () {
+				AmagiLoader.hide();
+			}
+		});
+	});
+
+	signInAdminFormEl.on('submit', function (e) {
+		e.preventDefault();
+
+
+		if (!$(this).valid())
+			return;
+
+		$.ajax({
+			url: `${BASE_URL}auth/index`,
+			type: 'POST',
+			async: true,
+			data: $(this).serialize(),
+			dataType: 'json',
+			beforeSend: function () {
+				AmagiLoader.show();
+			},
+			success: function (response) {
+				if (response.status) {
+					Swal.fire({
+						title: 'Success!',
+						text: response.message,
+						icon: 'success'
+					}).then(function () {
+						location.href = response.redirect_url;
 					});
 					return;
 				}
