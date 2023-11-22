@@ -123,6 +123,22 @@ form select{
 }
 
 
+.back {
+  text-decoration: none;
+  margin: auto;
+  color: #444;
+  font-weight: 600;
+}
+
+.back i {
+  text-align: center;
+  line-height: 65px;
+  color: #444;
+  transition: 0.5s;
+  font-size: 1.1rem;
+  padding-right: 20px;
+}
+
 .btn {
   width: 150px;
   background-color: #5995fd;
@@ -389,3 +405,5 @@ form select{
     left: 50%;
   }
 }
+
+

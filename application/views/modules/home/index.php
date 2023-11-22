@@ -7,7 +7,7 @@
 	<div class="swiper bg-slider">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
-				<img src="<?= site_url('assets/images/bg1.jpg')?>" alt="">
+				<img src="<?= site_url('assets/images/background1.jpg')?>" alt="">
 				<div class="text-content">
 					<h2 class="title">WEB BASED YEARBOOK</h2>
 					<p>Preserves, manages and where you can visit your yearbooks online.</p>
@@ -15,7 +15,7 @@
 				</div>
 			</div>
 			<div class="swiper-slide dark-layer">
-				<img src="<?= site_url('assets/images/bg2.jpg')?>" alt="">
+				<img src="<?= site_url('assets/images/background2.jpg')?>" alt="">
 				<div class="text-content">
 					<h2 class="title">WEB BASED YEARBOOK</h2>
 					<p>Preserves, manages and where you can visit your yearbooks online.</p>
@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			<div class="swiper-slide dark-layer">
-				<img src="<?= site_url('assets/images/bg3.jpg')?>" alt="">
+				<img src="<?= site_url('assets/images/background3.jpg')?>" alt="">
 				<div class="text-content">
 					<h2 class="title">WEB BASED YEARBOOK</h2>
 					<p>Preserves, manages and where you can visit your yearbooks online.</p>
@@ -31,7 +31,7 @@
 				</div>
 			</div>
 			<div class="swiper-slide">
-				<img src="<?= site_url('assets/images/bg4.jpg')?>" alt="">
+				<img src="<?= site_url('assets/images/background4.jpg')?>" alt="">
 				<div class="text-content">
 					<h2 class="title">WEB BASED YEARBOOK</h2>
 					<p>Preserves, manages and where you can visit your yearbooks online.</p>
@@ -42,10 +42,10 @@
 	</div>
 	<div class="bg-slider-thumbs">
 		<div class="swiper-wrapper thumbs-container">
-			<img src="<?= site_url('assets/images/bg1.jpg')?>" class="swiper-slide" alt="">
-			<img src="<?= site_url('assets/images/bg2.jpg')?>" class="swiper-slide" alt="">
-			<img src="<?= site_url('assets/images/bg3.jpg')?>" class="swiper-slide" alt="">
-			<img src="<?= site_url('assets/images/bg4.jpg')?>" class="swiper-slide" alt="">
+			<img src="<?= site_url('assets/images/background1.jpg')?>" class="swiper-slide" alt="">
+			<img src="<?= site_url('assets/images/background2.jpg')?>" class="swiper-slide" alt="">
+			<img src="<?= site_url('assets/images/background3.jpg')?>" class="swiper-slide" alt="">
+			<img src="<?= site_url('assets/images/background4.jpg')?>" class="swiper-slide" alt="">
 		</div>
 	</div>
 </section>
@@ -76,72 +76,18 @@
 </section>
 
 <section class="contact-section">
-	<h2 id="section3" style="text-align:center">Our Team</h2>
+	<h2 id="section3" style="text-align:center">The Team</h2>
+	<br>
+	<p><i>Meet the team behind this beautiful masterpiece.</i><p>
 	<div class="row">
 		<div class="column">
 			<div class="card">
-				<img src="<?= site_url('assets/images/person.jpg')?>" alt="Jeremae" style="width:50%">
-				<div class="container2">
-					<h2>Jeremae Aguro</h2>
-					<p class="title3">TVL ICT 12</p>
-					<p>Content</p>
-					<p>123@example.com</p>
-					<p>
-						<button class="button4">Contact</button>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="column">
-			<div class="card">
-				<img src="<?= site_url('assets/images/person.jpg')?>" alt="Karen" style="width:50%">
-				<div class="container2">
-					<h2>Karen Joy Avelino</h2>
-					<p class="title3">TVL ICT 12</p>
-					<p>Content</p>
-					<p>123@example.com</p>
-					<p>
-						<button class="button4">Contact</button>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="column">
-			<div class="card">
-				<img src="<?= site_url('assets/images/person.jpg')?>" alt="Carl" style="width:50%">
-				<div class="container2">
-					<h2>Carl Peter Baticados</h2>
-					<p class="title3">TVL ICT 12</p>
-					<p>Content</p>
-					<p>123@example.com</p>
-					<p>
-						<button class="button4">Contact</button>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="column">
-			<div class="card">
-				<img src="<?= site_url('assets/images/person.jpg')?>" alt="Arvin" style="width:50%">
-				<div class="container2">
-					<h2>Arvin Jham Dangan</h2>
-					<p class="title3">TVL ICT 12</p>
-					<p>Content</p>
-					<p>123@example.com</p>
-					<p>
-						<button class="button4">Contact</button>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="column">
-			<div class="card">
-				<img src="<?= site_url('assets/images/person.jpg')?>" alt="Dennis" style="width:50%">
+				<img src="<?= site_url('assets/images/dennis.png')?>" alt="Dennis Fresnido" style="width:50%">
 				<div class="container2">
 					<h2>Dennis Fresnido</h2>
-					<p class="title3">TVL ICT 12</p>
-					<p>Content</p>
-					<p>123@example.com</p>
+					<p class="title3">Director</p>
+					<p>beboyzkie30@gmail.com</p>
+					<p>09469032234</p>
 					<p>
 						<button class="button4">Contact</button>
 					</p>
@@ -150,12 +96,68 @@
 		</div>
 		<div class="column">
 			<div class="card">
-				<img src="<?= site_url('assets/images/person.jpg')?>" alt="Emmanuel" style="width:50%">
+				<img src="<?= site_url('assets/images/jeremae.png')?>" alt="Jeremae Aguro" style="width:50%">
+				<div class="container2">
+					<h2>Jeremae Aguro</h2>
+					<p class="title3">Programmer</p>
+					<p>agurojeremae20@gmail.com</p>
+					<p>09504276027</p>
+					<p>
+						<button class="button4">Contact</button>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="card">
+				<img src="<?= site_url('assets/images/carl.png')?>" alt="Carl Peter Baticados" style="width:50%">
+				<div class="container2">
+					<h2>Carl Peter Baticados</h2>
+					<p class="title3">Project Manager</p>
+					<p>carlsucol@gmail.com</p>
+					<p>09121287516</p>
+					<p>
+						<button class="button4">Contact</button>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="card">
+				<img src="<?= site_url('assets/images/emman.png')?>" alt="Emmanuel Setosta" style="width:50%">
 				<div class="container2">
 					<h2>Emmanuel Setosta</h2>
-					<p class="title3">TVL ICT 12</p>
-					<p>Content</p>
-					<p>123@example.com</p>
+					<p class="title3">Lead Developer</p>
+					<p>emmaunelsetosta25@gmail.com</p>
+					<p>09702063377</p>
+					<p>
+						<button class="button4">Contact</button>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="card">
+				<img src="<?= site_url('assets/images/karen.png')?>" alt="Karen Joy Avelino" style="width:50%">
+				<div class="container2">
+					<h2>Karen Joy Avelino</h2>
+					<p class="title3">Customer Support Lead</p>
+					<p>karenjoy.avelino@gmail.com</p>
+					<p>09927015774</p>
+					<p>
+						<button class="button4">Contact</button>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="card">
+				<img src="<?= site_url('assets/images/arvin.png')?>" alt="Arvin Jham Dangan" style="width:50%">
+				<div class="container2">
+					<h2>Arvin Jham Dangan</h2>
+					<p class="title3">Content Manager</p>
+					<p>arvndangan@gmail.com</p>
+					<p>09317744050</p>
 					<p>
 						<button class="button4">Contact</button>
 					</p>

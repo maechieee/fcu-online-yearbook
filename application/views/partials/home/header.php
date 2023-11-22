@@ -1,6 +1,6 @@
 <header>
 	<div class="nav-bar">
-		<a href="" class="logo"><img src="<?= site_url('assets/images/logo.png')?>" alt=""></a>
+		<a href="" class="logo"><img src="<?= site_url('assets/images/filamer_logo1.png')?>" alt=""></a>
 		<div class="navigation">
 			<div class="nav-items">
 				<i class="uil uil-times nav-close-btn"></i>

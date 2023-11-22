@@ -17,6 +17,14 @@ class Users_model extends CI_Model
 			->result_array();
 	}
 
+	public function get_all_by_role_id($role_id)
+	{
+		return $this->db->where('role_id', $role_id)
+			->where('deleted_at', null)
+			->get($this->_table_name)
+			->result_array();
+	}
+
 	public function update($data, $id)
 	{
 		$this->db->where('id', $id)

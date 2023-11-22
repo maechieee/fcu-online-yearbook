@@ -25,7 +25,8 @@ class Dropdown
 			case 'roles':
 				$array = array(
 					'' => 'Select Value',
-					1 => 'ADMINISTRATOR'
+					1 => 'ADMINISTRATOR',
+					2 => 'STUDENT',
 				);
 				break;
 			case 'gender':

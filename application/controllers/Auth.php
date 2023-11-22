@@ -75,4 +75,12 @@ class Auth extends CI_Controller
 		$this->load->view('modules/auth/index', $data);
 		$this->load->view('layouts/auth/foot', $data);
 	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('user');
+		$this->session->set_userdata('RESULT_STATUS', RESULT_SUCCESS);
+		$this->session->set_userdata('RESULT_MESSAGE', 'Account has been successfully logged out.');
+		redirect('auth');
+	}
 }

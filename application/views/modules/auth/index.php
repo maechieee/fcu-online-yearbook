@@ -12,10 +12,11 @@
 					<i class="uil uil-lock"></i>
 					<input id="student_password" name="student_password" type="password" placeholder="Password" required/>
 				</div>
+				<a class="back" href="<?= site_url('home') ?>"><i class="uil uil-home"></i>Back to homepage</a>
 				<input type="submit" value="Login" class="btn solid"/>
 			</form>
 			<form id="sign_in_admin_form" role="form" method="post" class="sign-in-admin-form">
-				<h2 class="title">Sign in</h2>
+				<h2 class="title">Sign In</h2>
 				<input type="hidden" name="role" value="<?= ROLE_ADMINISTRATOR?>" readonly required>
 				<div class="input-field">
 					<i class="uil uil-user"></i>
@@ -25,6 +26,7 @@
 					<i class="uil uil-lock"></i>
 					<input id="admin_password" name="admin_password" type="password" placeholder="Password" required/>
 				</div>
+				<a class="back" href="<?= site_url('home') ?>"><i class="uil uil-home"></i>Back to homepage</a>
 				<input type="submit" class="btn" value="Sign In"/>
 			</form>
 		</div>
@@ -42,7 +44,7 @@
 		</div>
 		<div class="panel right-panel">
 			<div class="content">
-				<h3>Sign In as User</h3>
+				<h3>Sign In as Student</h3>
 				<p></p>
 				<button class="btn transparent" id="sign-in-btn">
 					Sign In
