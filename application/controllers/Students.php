@@ -14,8 +14,7 @@ class Students extends CI_Controller
 
 		$this->load->model(array(
 			'Users_model' => 'M_users',
-			'Strands_model' => 'M_strands',
-			'Grade_levels_model' => 'M_grade_levels'
+			'Strands_model' => 'M_strands'
 		));
 
 		$this->_create_additional = array(
@@ -72,6 +71,26 @@ class Students extends CI_Controller
 	public function form($id = null)
 	{
 		if ($post_data = $this->input->post()) {
+			if (!empty($id)) {
+				$student_data = array(
+						'email_address' => $post_data['email_address'],
+						'first_name' => $post_data['first_name'],
+						'middle_name' => $post_data['middle_name'],
+						'last_name' => $post_data['last_name'],
+						'gender' => $post_data['gender'],
+						'dob' => $post_data['dob'],
+						'contact_no' => $post_data['contact_no'],
+						'address' => $post_data['address'],
+						'strand_id' => $post_data['strand_id'],
+						'is_activated' => $post_data['is_activated']
+					) + $this->_update_additional;
+
+				$this->M_users->update($student_data, $post_data['id']);
+				exit(json_encode(array(
+					'status' => RESULT_SUCCESS,
+					'message' => 'Student has been successfully updated.'
+				)));
+			}
 			$student_data = array(
 					'id_number' => $post_data['id_number'],
 					'username' => $post_data['id_number'],
@@ -85,7 +104,6 @@ class Students extends CI_Controller
 					'contact_no' => $post_data['contact_no'],
 					'address' => $post_data['address'],
 					'strand_id' => $post_data['strand_id'],
-					'grade_level_id' => $post_data['grade_level_id'],
 					'role_id' => ROLE_STUDENT,
 					'is_activated' => $post_data['is_activated']
 				) + $this->_create_additional;
@@ -105,7 +123,6 @@ class Students extends CI_Controller
 			}
 		}
 		$data['strands'] = $strands = $this->M_strands->get_all();
-		$data['grade_levels'] = $grade_levels = $this->M_grade_levels->get_all();
 		$data['page_data'] = array(
 			'module' => 'Students',
 			'section' => !empty($id) ? 'Update Student' : 'Add Student',

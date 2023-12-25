@@ -50,20 +50,7 @@
 							class="fas fa-arrow-circle-right"></i></a>
 				</div>
 			</div>
-			<div class="col-lg-4 col-12">
-				<!-- small box -->
-				<div class="small-box bg-secondary">
-					<div class="inner">
-						<h3><?= count_all('users'); ?></h3>
-						<p>Grade Level</p>
-					</div>
-					<div class="icon">
-						<i class="ion ion-android-archive"></i>
-					</div>
-					<a href="<?= site_url('users'); ?>" class="small-box-footer">More info <i
-							class="fas fa-arrow-circle-right"></i></a>
-				</div>
-			</div>
+
 			<div class="col-lg-4 col-12">
 				<!-- small box -->
 				<div class="small-box bg-warning">

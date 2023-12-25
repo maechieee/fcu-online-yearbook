@@ -174,20 +174,6 @@
 									</div>
 								</div>
 
-								<div class="col-sm-4">
-									<div class="form-group">
-										<label for="grade_level_id">Grade Level <code>Required</code></label>
-										<select name="grade_level_id" id="grade_level_id" class="form-control" required>
-											<option value="">Select Value</option>
-											<?php if (!empty(@$grade_levels)) : ?>
-												<?php foreach ($grade_levels as $key => $value) : ?>
-													<option
-														value="<?= $value['id']; ?>" <?= @$info['grade_level_id'] == $value['id'] ? 'selected' : null; ?>><?= $value['name']; ?></option>
-												<?php endforeach; ?>
-											<?php endif; ?>
-										</select>
-									</div>
-								</div>
 							</div>
 
 

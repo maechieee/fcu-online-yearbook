@@ -38,7 +38,7 @@ class Auth extends CI_Controller
 					break;
 				case ROLE_STUDENT:
 					$user = $this->M_users->login($post_data['student_username'], $post_data['student_password'], $role);
-					$redirect_url = site_url('dashboard/student_main');
+					$redirect_url = site_url('dashboard/admin_main');
 					break;
 				default:
 					$user = null;

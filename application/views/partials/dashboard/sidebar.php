@@ -59,8 +59,8 @@
 					</li>
 
 					<li class="nav-item">
-						<a href="<?= site_url('school_years') ?>"
-						   class="nav-link <?= strtolower(@$page_data['section']) == 'index school years' ? 'active' : null; ?>">
+						<a href="<?= site_url('strands') ?>"
+						   class="nav-link <?= (strtolower(@$page_data['section']) == 'index strands' || strtolower(@$page_data['section']) == 'add strand' || strtolower(@$page_data['section']) == 'update strand')? 'active' : null; ?>">
 							<i class="nav-icon fa fa-users"></i>
 							<p>
 								Strands
@@ -68,15 +68,15 @@
 						</a>
 					</li>
 
-					<li class="nav-item">
-						<a href="<?= site_url('departments') ?>"
-						   class="nav-link <?= strtolower(@$page_data['section']) == 'index departments' ? 'active' : null; ?>">
-							<i class="nav-icon fa fa-building"></i>
-							<p>
-								Grade Level
-							</p>
-						</a>
-					</li>
+<!--					<li class="nav-item">-->
+<!--						<a href="--><?php //= site_url('departments') ?><!--"-->
+<!--						   class="nav-link --><?php //= strtolower(@$page_data['section']) == 'index departments' ? 'active' : null; ?><!--">-->
+<!--							<i class="nav-icon fa fa-building"></i>-->
+<!--							<p>-->
+<!--								Grade Level-->
+<!--							</p>-->
+<!--						</a>-->
+<!--					</li>-->
 
 
 					<li class="nav-item <?= strtolower(@$page_data['module']) == 'students' ? 'menu-open' : null; ?>">
