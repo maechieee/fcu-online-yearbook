@@ -14,7 +14,7 @@ class Students extends CI_Controller
 
 		$this->load->model(array(
 			'Users_model' => 'M_users',
-			'Strands_model' => 'M_strands'
+			'Departments_model' => 'M_departments'
 		));
 
 		$this->_create_additional = array(
@@ -81,7 +81,7 @@ class Students extends CI_Controller
 						'dob' => $post_data['dob'],
 						'contact_no' => $post_data['contact_no'],
 						'address' => $post_data['address'],
-						'strand_id' => $post_data['strand_id'],
+						'department_id' => $post_data['department_id'],
 						'is_activated' => $post_data['is_activated']
 					) + $this->_update_additional;
 
@@ -103,7 +103,7 @@ class Students extends CI_Controller
 					'dob' => $post_data['dob'],
 					'contact_no' => $post_data['contact_no'],
 					'address' => $post_data['address'],
-					'strand_id' => $post_data['strand_id'],
+					'department_id' => $post_data['department_id'],
 					'role_id' => ROLE_STUDENT,
 					'is_activated' => $post_data['is_activated']
 				) + $this->_create_additional;
@@ -122,7 +122,7 @@ class Students extends CI_Controller
 				die();
 			}
 		}
-		$data['strands'] = $strands = $this->M_strands->get_all();
+		$data['departments'] = $departments = $this->M_departments->get_all();
 		$data['page_data'] = array(
 			'module' => 'Students',
 			'section' => !empty($id) ? 'Update Student' : 'Add Student',

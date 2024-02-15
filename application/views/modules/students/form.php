@@ -161,13 +161,13 @@
 							<div class="row">
 								<div class="col-sm-4">
 									<div class="form-group">
-										<label for="strand_id">Strand <code>Required</code></label>
-										<select name="strand_id" id="strand_id" class="form-control" required>
+										<label for="strand_id">Department <code>Required</code></label>
+										<select name="strand_id" id="department_id" class="form-control" required>
 											<option value="">Select Value</option>
-											<?php if (!empty(@$strands)) : ?>
-												<?php foreach ($strands as $key => $value) : ?>
+											<?php if (!empty(@$departments)) : ?>
+												<?php foreach ($departments as $key => $value) : ?>
 													<option
-														value="<?= $value['id']; ?>" <?= @$info['strand_id'] == $value['id'] ? 'selected' : null; ?>><?= $value['name']; ?></option>
+														value="<?= $value['id']; ?>" <?= @$info['department_id'] == $value['id'] ? 'selected' : null; ?>><?= $value['name']; ?></option>
 												<?php endforeach; ?>
 											<?php endif; ?>
 										</select>

@@ -45,7 +45,7 @@
 									<th>ID No.</th>
 									<th>Name</th>
 									<th>Gender</th>
-									<th>Strand</th>
+									<th>Department</th>
 									<th>Date of Birth</th>
 									<th>Contact No.</th>
 									<th>Created</th>
@@ -60,7 +60,7 @@
 											<td><?= $value['id_number']; ?></td>
 											<td><?= $value['last_name'] . ', ' . $value['first_name']; ?></td>
 											<td><?= Dropdown::get_static('gender', $value['gender'], 'view'); ?></td>
-											<td><?= get_name_by_id($value['strand_id'], 'strands'); ?></td>
+											<td><?= get_name_by_id($value['department_id'], 'departments'); ?></td>
 											<td><?= view_date($value['dob']); ?></td>
 											<td><?= $value['contact_no']; ?></td>
 											<td style="width: 15%;"><?= '<div class="badge bg-info">' . get_person_name($value['created_by']) . '</div>' . ' <div>' . view_date($value['created_at'], 'date_am_pm') . '</div>'; ?></td>
