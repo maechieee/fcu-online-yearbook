@@ -85,7 +85,7 @@ ENGINE = INNODB,
 AUTO_INCREMENT = 12,
 AVG_ROW_LENGTH = 16384,
 CHARACTER SET utf8mb4,
-COLLATE utf8mb4_0900_ai_ci;
+COLLATE utf8mb4_unicode_ci;
 
 --
 -- Create table `strands`
@@ -105,7 +105,7 @@ ENGINE = INNODB,
 AUTO_INCREMENT = 4,
 AVG_ROW_LENGTH = 16384,
 CHARACTER SET utf8mb4,
-COLLATE utf8mb4_0900_ai_ci;
+COLLATE utf8mb4_unicode_ci;
 
 --
 -- Create table `grade_levels`
@@ -125,7 +125,7 @@ ENGINE = INNODB,
 AUTO_INCREMENT = 3,
 AVG_ROW_LENGTH = 8192,
 CHARACTER SET utf8mb4,
-COLLATE utf8mb4_0900_ai_ci;
+COLLATE utf8mb4_unicode_ci;
 
 --
 -- Create table `departments`
@@ -145,7 +145,7 @@ CREATE TABLE departments (
 ENGINE = INNODB,
 AUTO_INCREMENT = 4,
 CHARACTER SET utf8mb4,
-COLLATE utf8mb4_0900_ai_ci;
+COLLATE utf8mb4_unicode_ci;
 
 -- 
 -- Dumping data for table users
