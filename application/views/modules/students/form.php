@@ -47,10 +47,10 @@
 							<div class="row">
 								<div class="col-sm-4">
 									<div class="form-group">
-										<label for="id_number">Student No <code>Required</code></label>
-										<input type="text" id="id_number" name="id_number"
+										<label for="student_no">Student No <code>Required</code></label>
+										<input type="text" id="student_no" name="student_no"
 											   class="form-control"
-											   placeholder="Enter student no" value="<?= @$info['id_number']; ?>"
+											   placeholder="Enter student no" value="<?= @$info['student_no']; ?>"
 											   required
 											   autofocus>
 									</div>
@@ -161,8 +161,8 @@
 							<div class="row">
 								<div class="col-sm-4">
 									<div class="form-group">
-										<label for="strand_id">Department <code>Required</code></label>
-										<select name="strand_id" id="department_id" class="form-control" required>
+										<label for="department_id">Department <code>Required</code></label>
+										<select name="department_id" id="department_id" class="form-control" required>
 											<option value="">Select Value</option>
 											<?php if (!empty(@$departments)) : ?>
 												<?php foreach ($departments as $key => $value) : ?>
@@ -171,6 +171,38 @@
 												<?php endforeach; ?>
 											<?php endif; ?>
 										</select>
+									</div>
+								</div>
+
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label for="honor">Honor</label>
+										<?= form_dropdown('honor', Dropdown::get_static('honors'), @$info['honor'], 'id="honor" class="form-control"') ?>
+									</div>
+								</div>
+
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label for="achievements">Achievements</label>
+										<input type="text" id="achievements" name="achievements"
+											   class="form-control"
+											   placeholder="Enter achievements" value="<?= @$info['middle_name']; ?>">
+									</div>
+								</div>
+
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label for="notes">Notes</label>
+										<textarea id="notes" name="notes" class="form-control"
+												  placeholder="Enter notes"></textarea>
+									</div>
+								</div>
+
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label for="photo_1" class="form-label">Cover Photo</label>
+										<input type="file" class="form-control" id="photo_1" name="photo_1"
+											   placeholder="Cover Photo">
 									</div>
 								</div>
 

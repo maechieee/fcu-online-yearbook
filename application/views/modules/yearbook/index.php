@@ -24,377 +24,88 @@
 		<div class="card card-solid">
 			<div class="card-body pb-0">
 				<div class="row">
-					<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-						<div class="card bg-light d-flex flex-fill">
-							<div class="card-header text-muted border-bottom-0">
-								Digital Strategist
-							</div>
-							<div class="card-body pt-0">
-								<div class="row">
-									<div class="col-7">
-										<h2 class="lead"><b>Nicole Pearson</b></h2>
-										<p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist
-											/ Coffee Lover </p>
-										<ul class="ml-4 mb-0 fa-ul text-muted">
-											<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
-												Address: Demo Street 123, Demo City 04312, NJ
-											</li>
-											<li class="small"><span class="fa-li"><i
-														class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23
-												52
-											</li>
-										</ul>
+					<?php if (!empty($items)) : ?>
+						<?php foreach ($items as $item) : ?>
+							<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+								<div class="card bg-light d-flex flex-fill">
+									<div class="card-header text-muted border-bottom-0">
+										<?= $item['department_name'] ?>
 									</div>
-									<div class="col-5 text-center">
-										<img src="<?= site_url('assets/temps/adminlte/dist/img/user1-128x128.jpg')?>" alt="user-avatar"
-											 class="img-circle img-fluid">
-									</div>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="text-right">
-									<a href="#" class="btn btn-sm btn-secondary">
-										<i class="fas fa-edit"></i> Update Information
-									</a>
+									<div class="card-body pt-0">
+										<div class="row">
+											<div class="col-7">
+												<h2 class="lead">
+													<b><?= $item['first_name'] . ' ' . $item['last_name'] ?></b>
+												</h2>
+												<?php if ($item['role_id'] === ROLE_STUDENT) : ?>
 
-									<a href="#" class="btn btn-sm btn-primary">
-										<i class="fas fa-user"></i> View Details
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-						<div class="card bg-light d-flex flex-fill">
-							<div class="card-header text-muted border-bottom-0">
-								Digital Strategist
-							</div>
-							<div class="card-body pt-0">
-								<div class="row">
-									<div class="col-7">
-										<h2 class="lead"><b>Nicole Pearson</b></h2>
-										<p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist
-											/ Coffee Lover </p>
-										<ul class="ml-4 mb-0 fa-ul text-muted">
-											<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
-												Address: Demo Street 123, Demo City 04312, NJ
-											</li>
-											<li class="small"><span class="fa-li"><i
-														class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23
-												52
-											</li>
-										</ul>
-									</div>
-									<div class="col-5 text-center">
-										<img src="<?= site_url('assets/temps/adminlte/dist/img/user2-160x160.jpg')?>" alt="user-avatar"
-											 class="img-circle img-fluid">
-									</div>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="text-right">
-									<a href="#" class="btn btn-sm btn-secondary">
-										<i class="fas fa-edit"></i> Update Information
-									</a>
+													<p class="text-muted text-sm">
+														<b>Achievements: </b> <?= $item['achievements']; ?> </p>
+													<ul class="ml-4 mb-0 fa-ul text-muted">
+														<li class="small"><span class="fa-li"><i
+																	class="fas fa-lg fa-award"></i></span>
+															Honor: <?= !empty($item['honor']) ? $item['honor'] : '-'; ?>
+														</li>
+														<li class="small"><span class="fa-li"><i
+																	class="fas fa-lg fa-building"></i></span>
+															Address: <?= $item['address']; ?>
+														</li>
+														<li class="small"><span class="fa-li"><i
+																	class="fas fa-lg fa-envelope"></i></span> Email
+															Address: <?= $item['email_address'] ?>
+														</li>
+													</ul>
 
-									<a href="#" class="btn btn-sm btn-primary">
-										<i class="fas fa-user"></i> View Details
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-						<div class="card bg-light d-flex flex-fill">
-							<div class="card-header text-muted border-bottom-0">
-								Digital Strategist
-							</div>
-							<div class="card-body pt-0">
-								<div class="row">
-									<div class="col-7">
-										<h2 class="lead"><b>Jeremae Aguro</b></h2>
-										<p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist
-											/ Coffee Lover </p>
-										<ul class="ml-4 mb-0 fa-ul text-muted">
-											<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
-												Address: Demo Street 123, Demo City 04312, NJ
-											</li>
-											<li class="small"><span class="fa-li"><i
-														class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23
-												52
-											</li>
-										</ul>
-									</div>
-									<div class="col-5 text-center">
-										<img src="<?= site_url('assets/temps/adminlte/dist/img/user1-128x128.jpg')?>" alt="user-avatar"
-											 class="img-circle img-fluid">
-									</div>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="text-right">
-									<a href="#" class="btn btn-sm btn-secondary">
-										<i class="fas fa-edit"></i> Update Information
-									</a>
+												<?php else: ?>
+													<ul class="ml-4 mb-0 fa-ul text-muted">
+														<li class="small"><span class="fa-li"><i
+																	class="fas fa-lg fa-building"></i></span>
+															Address: <?= $item['address']; ?>
+														</li>
+														<li class="small"><span class="fa-li"><i
+																	class="fas fa-lg fa-envelope"></i></span> Email
+															Address: <?= $item['email_address'] ?>
+														</li>
+													</ul>
 
-									<a href="#" class="btn btn-sm btn-primary">
-										<i class="fas fa-user"></i> View Details
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-						<div class="card bg-light d-flex flex-fill">
-							<div class="card-header text-muted border-bottom-0">
-								Digital Strategist
-							</div>
-							<div class="card-body pt-0">
-								<div class="row">
-									<div class="col-7">
-										<h2 class="lead"><b>Nicole Pearson</b></h2>
-										<p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist
-											/ Coffee Lover </p>
-										<ul class="ml-4 mb-0 fa-ul text-muted">
-											<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
-												Address: Demo Street 123, Demo City 04312, NJ
-											</li>
-											<li class="small"><span class="fa-li"><i
-														class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23
-												52
-											</li>
-										</ul>
+												<?php endif; ?>
+												<p class="text-muted text-sm">
+													<b>Notes: </b> <?= !empty($item['notes']) ? $item['notes'] : '-'; ?>
+												</p>
+											</div>
+											<div class="col-5 text-center">
+												<img
+													src="<?= site_url('assets/uploads/photo/' . $item['picture_1']) ?>"
+													alt="user-avatar"
+													class="img-circle img-fluid">
+											</div>
+										</div>
 									</div>
-									<div class="col-5 text-center">
-										<img src="<?= site_url('assets/temps/adminlte/dist/img/user2-160x160.jpg')?>" alt="user-avatar"
-											 class="img-circle img-fluid">
-									</div>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="text-right">
-									<a href="#" class="btn btn-sm btn-secondary">
-										<i class="fas fa-edit"></i> Update Information
-									</a>
+									<div class="card-footer">
+										<?php if ($this->session->userdata('user')['role_id'] === ROLE_ADMINISTRATOR) : ?>
+											<div class="text-right">
+												<a href="<?= site_url('staffs/form/' . $item['id']) ?>"
+												   class="btn btn-sm btn-secondary">
+													<i class="fas fa-edit"></i> Update Information
+												</a>
 
-									<a href="#" class="btn btn-sm btn-primary">
-										<i class="fas fa-user"></i> View Details
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-						<div class="card bg-light d-flex flex-fill">
-							<div class="card-header text-muted border-bottom-0">
-								Digital Strategist
-							</div>
-							<div class="card-body pt-0">
-								<div class="row">
-									<div class="col-7">
-										<h2 class="lead"><b>Nicole Pearson</b></h2>
-										<p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist
-											/ Coffee Lover </p>
-										<ul class="ml-4 mb-0 fa-ul text-muted">
-											<li class="small"><span class="fa-li"><i
-														class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23
-												52
-											</li>
-										</ul>
-									</div>
-									<div class="col-5 text-center">
-										<img src="<?= site_url('assets/temps/adminlte/dist/img/user1-128x128.jpg')?>" alt="user-avatar"
-											 class="img-circle img-fluid">
+												<a href="<?= site_url('staffs/view/' . $item['id']) ?>"
+												   class="btn btn-sm btn-primary">
+													<i class="fas fa-user"></i> View Details
+												</a>
+											</div>
+										<?php endif; ?>
 									</div>
 								</div>
 							</div>
-							<div class="card-footer">
-								<div class="text-right">
-									<a href="#" class="btn btn-sm btn-secondary">
-										<i class="fas fa-edit"></i> Update Information
-									</a>
+						<?php endforeach; ?>
 
-									<a href="#" class="btn btn-sm btn-primary">
-										<i class="fas fa-user"></i> View Details
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-						<div class="card bg-light d-flex flex-fill">
-							<div class="card-header text-muted border-bottom-0">
-								Digital Strategist
-							</div>
-							<div class="card-body pt-0">
-								<div class="row">
-									<div class="col-7">
-										<h2 class="lead"><b>Nicole Pearson</b></h2>
-										<p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist
-											/ Coffee Lover </p>
-										<ul class="ml-4 mb-0 fa-ul text-muted">
-											<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
-												Address: Demo Street 123, Demo City 04312, NJ
-											</li>
-											<li class="small"><span class="fa-li"><i
-														class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23
-												52
-											</li>
-										</ul>
-									</div>
-									<div class="col-5 text-center">
-										<img src="<?= site_url('assets/temps/adminlte/dist/img/user1-128x128.jpg')?>" alt="user-avatar"
-											 class="img-circle img-fluid">
-									</div>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="text-right">
-									<a href="#" class="btn btn-sm btn-secondary">
-										<i class="fas fa-edit"></i> Update Information
-									</a>
-
-									<a href="#" class="btn btn-sm btn-primary">
-										<i class="fas fa-user"></i> View Details
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-						<div class="card bg-light d-flex flex-fill">
-							<div class="card-header text-muted border-bottom-0">
-								Digital Strategist
-							</div>
-							<div class="card-body pt-0">
-								<div class="row">
-									<div class="col-7">
-										<h2 class="lead"><b>Nicole Pearson</b></h2>
-										<p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist
-											/ Coffee Lover </p>
-										<ul class="ml-4 mb-0 fa-ul text-muted">
-											<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
-												Address: Demo Street 123, Demo City 04312, NJ
-											</li>
-										</ul>
-									</div>
-									<div class="col-5 text-center">
-										<img src="<?= site_url('assets/temps/adminlte/dist/img/user1-128x128.jpg')?>" alt="user-avatar"
-											 class="img-circle img-fluid">
-									</div>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="text-right">
-									<a href="#" class="btn btn-sm btn-secondary">
-										<i class="fas fa-edit"></i> Update Information
-									</a>
-
-									<a href="#" class="btn btn-sm btn-primary">
-										<i class="fas fa-user"></i> View Details
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-						<div class="card bg-light d-flex flex-fill">
-							<div class="card-header text-muted border-bottom-0">
-								Digital Strategist
-							</div>
-							<div class="card-body pt-0">
-								<div class="row">
-									<div class="col-7">
-										<h2 class="lead"><b>Nicole Pearson</b></h2>
-										<p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist
-											/ Coffee Lover </p>
-										<ul class="ml-4 mb-0 fa-ul text-muted">
-											<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
-												Address: Demo Street 123, Demo City 04312, NJ
-											</li>
-											<li class="small"><span class="fa-li"><i
-														class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23
-												52
-											</li>
-										</ul>
-									</div>
-									<div class="col-5 text-center">
-										<img src="<?= site_url('assets/temps/adminlte/dist/img/user1-128x128.jpg')?>" alt="user-avatar"
-											 class="img-circle img-fluid">
-									</div>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="text-right">
-									<a href="#" class="btn btn-sm btn-secondary">
-										<i class="fas fa-edit"></i> Update Information
-									</a>
-
-									<a href="#" class="btn btn-sm btn-primary">
-										<i class="fas fa-user"></i> View Details
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-						<div class="card bg-light d-flex flex-fill">
-							<div class="card-header text-muted border-bottom-0">
-								Digital Strategist
-							</div>
-							<div class="card-body pt-0">
-								<div class="row">
-									<div class="col-7">
-										<h2 class="lead"><b>Nicole Pearson</b></h2>
-										<p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist
-											/ Coffee Lover </p>
-										<ul class="ml-4 mb-0 fa-ul text-muted">
-											<li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
-												Address: Demo Street 123, Demo City 04312, NJ
-											</li>
-											<li class="small"><span class="fa-li"><i
-														class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23
-												52
-											</li>
-										</ul>
-									</div>
-									<div class="col-5 text-center">
-										<img src="<?= site_url('assets/temps/adminlte/dist/img/user2-160x160.jpg')?>" alt="user-avatar"
-											 class="img-circle img-fluid">
-									</div>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="text-right">
-									<a href="#" class="btn btn-sm btn-secondary">
-										<i class="fas fa-edit"></i> Update Information
-									</a>
-
-									<a href="#" class="btn btn-sm btn-primary">
-										<i class="fas fa-user"></i> View Details
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?php else: ?>
+						<h4 class="text-center">No data available</h4>
+					<?php endif; ?>
 				</div>
 			</div>
 			<!-- /.card-body -->
-			<div class="card-footer">
-				<nav aria-label="Contacts Page Navigation">
-					<ul class="pagination justify-content-center m-0">
-						<li class="page-item active"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item"><a class="page-link" href="#">5</a></li>
-						<li class="page-item"><a class="page-link" href="#">6</a></li>
-						<li class="page-item"><a class="page-link" href="#">7</a></li>
-						<li class="page-item"><a class="page-link" href="#">8</a></li>
-					</ul>
-				</nav>
-			</div>
-			<!-- /.card-footer -->
 		</div>
 		<!-- /.card -->
 

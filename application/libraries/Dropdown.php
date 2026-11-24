@@ -53,6 +53,14 @@ class Dropdown
 					1 => 'Activated'
 				);
 				break;
+			case 'honors':
+				$array = array(
+					null => 'Select Value',
+					'HIGHEST HONORS' => 'HIGHEST HONORS',
+					'HIGH HONORS' => 'HIGH HONORS',
+					'HONORS' => 'HONORS'
+				);
+				break;
 			default:
 				$array = array();
 				break;

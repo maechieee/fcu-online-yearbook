@@ -57,7 +57,7 @@
 										<tr>
 											<td><?= $value['id']; ?></td>
 											<td><?= $value['name']; ?></td>
-											<td><?= $value['description']; ?></td>
+											<td><?= !empty($value['description']) ? $value['description'] : '-'; ?></td>
 											<td style="width: 15%;"><?= '<div class="badge bg-info">' . get_person_name($value['created_by']) . '</div>' . ' <div>' . view_date($value['created_at'], 'date_am_pm') . '</div>'; ?></td>
 											<td style="width: 15%;"><?= '<div class="badge bg-info">' . get_person_name($value['updated_by']) . '</div>' . ' <div>' . view_date($value['updated_at'], 'date_am_pm') . '</div>'; ?></td>
 											<td>

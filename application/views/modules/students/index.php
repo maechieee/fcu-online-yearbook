@@ -42,7 +42,7 @@
 							<table id="table" class="table table-bordered table-hover">
 								<thead>
 								<tr>
-									<th>ID No.</th>
+									<th>Student No.</th>
 									<th>Name</th>
 									<th>Gender</th>
 									<th>Department</th>
@@ -57,7 +57,7 @@
 								<?php if (!empty(@$items)) : ?>
 									<?php foreach (@$items as $key => $value) : ?>
 										<tr>
-											<td><?= $value['id_number']; ?></td>
+											<td><?= $value['student_no']; ?></td>
 											<td><?= $value['last_name'] . ', ' . $value['first_name']; ?></td>
 											<td><?= Dropdown::get_static('gender', $value['gender'], 'view'); ?></td>
 											<td><?= get_name_by_id($value['department_id'], 'departments'); ?></td>

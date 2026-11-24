@@ -28,6 +28,15 @@ class Yearbook extends CI_Controller
 	}
 
 	public function index() {
+		$category = $_GET['category'];
+		if ($category == 'students') {
+			$data['items'] = $items = $this->M_users->get_all_by_role_id(ROLE_STUDENT);
+		} else if ($category == 'honor_students') {
+			$data['items'] = $items = $this->M_users->get_all_honor_students();
+		} else if ($category == 'staffs') {
+			$data['items'] = $items = $this->M_users->get_all_by_role_id(ROLE_ADMINISTRATOR);
+		}
+
 		$data['page_data'] = array(
 			'module' => 'Yearbook',
 			'section' => 'Index',

@@ -50,7 +50,7 @@
 							</li>
 							<li class="nav-item">
 								<a href="<?= site_url('staffs') ?>"
-								   class="nav-link <?= strtolower(@$page_data['module']) == 'staffs' && (strtolower(@$page_data['section']) == 'index' || strtolower(@$page_data['section']) == 'update staff') ? 'active' : null; ?>">
+								   class="nav-link <?= strtolower(@$page_data['module']) == 'staffs' && (strtolower(@$page_data['section']) == 'index' || strtolower(@$page_data['section']) == 'update staff' || strtolower(@$page_data['section']) == 'view staff') ? 'active' : null; ?>">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Manage</p>
 								</a>
@@ -60,23 +60,13 @@
 
 					<li class="nav-item">
 						<a href="<?= site_url('departments') ?>"
-						   class="nav-link <?= (strtolower(@$page_data['section']) == 'index departments' || strtolower(@$page_data['section']) == 'add department' || strtolower(@$page_data['section']) == 'update department')? 'active' : null; ?>">
+						   class="nav-link <?= (strtolower(@$page_data['section']) == 'index departments' || strtolower(@$page_data['section']) == 'add department' || strtolower(@$page_data['section']) == 'update department') ? 'active' : null; ?>">
 							<i class="nav-icon fa fa-building"></i>
 							<p>
 								Departments
 							</p>
 						</a>
 					</li>
-
-<!--					<li class="nav-item">-->
-<!--						<a href="--><?php //= site_url('departments') ?><!--"-->
-<!--						   class="nav-link --><?php //= strtolower(@$page_data['section']) == 'index departments' ? 'active' : null; ?><!--">-->
-<!--							<i class="nav-icon fa fa-building"></i>-->
-<!--							<p>-->
-<!--								Grade Level-->
-<!--							</p>-->
-<!--						</a>-->
-<!--					</li>-->
 
 
 					<li class="nav-item <?= strtolower(@$page_data['module']) == 'students' ? 'menu-open' : null; ?>">
@@ -98,7 +88,7 @@
 							</li>
 							<li class="nav-item">
 								<a href="<?= site_url('students') ?>"
-								   class="nav-link <?= strtolower(@$page_data['module']) == 'students' && (strtolower(@$page_data['section']) == 'index') ? 'active' : null; ?>">
+								   class="nav-link <?= strtolower(@$page_data['module']) == 'students' && (strtolower(@$page_data['section']) == 'index' || strtolower(@$page_data['section']) == 'view student' || strtolower(@$page_data['section']) == 'update student') ? 'active' : null; ?>">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Manage</p>
 								</a>
@@ -106,21 +96,11 @@
 						</ul>
 					</li>
 
-					<li class="nav-item">
-						<a href="<?= site_url('departments') ?>"
-						   class="nav-link <?= strtolower(@$page_data['section']) == 'index departments' ? 'active' : null; ?>">
-							<i class="nav-icon fa fa-users"></i>
-							<p>
-								Application for Updating
-							</p>
-						</a>
-					</li>
-
 
 					<li class="nav-item <?= strtolower(@$page_data['module']) == 'yearbook' ? 'menu-open' : null; ?>">
 						<a href="#"
 						   class="nav-link <?= strtolower(@$page_data['module']) == 'yearbook' ? 'active' : null; ?>">
-							<i class="nav-icon fas fa-list"></i>
+							<i class="nav-icon fas fa-book"></i>
 							<p>
 								Yearbook
 								<i class="fas fa-angle-left right"></i>
@@ -128,25 +108,22 @@
 						</a>
 						<ul class="nav nav-treeview">
 							<li class="nav-item">
-								<a href="<?= site_url('yearbook') ?>" class="nav-link <?= strtolower(@$page_data['module']) == 'yearbook' && (strtolower(@$page_data['section']) == 'index') ? 'active' : null; ?>">
+								<a href="<?= site_url('yearbook/index?category=students') ?>"
+								   class="nav-link <?= strtolower(@$page_data['module']) == 'yearbook' && (strtolower(@$page_data['section']) == 'index') && $_GET['category'] == 'students' ? 'active' : null; ?>">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Students</p>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link">
+								<a href="<?= site_url('yearbook/index?category=honor_students') ?>"
+								   class="nav-link <?= strtolower(@$page_data['module']) == 'yearbook' && (strtolower(@$page_data['section']) == 'index') && $_GET['category'] == 'honor_students' ? 'active' : null; ?>">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Honor Students</p>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="far fa-circle nav-icon"></i>
-									<p>Organizations</p>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
+								<a href="<?= site_url('yearbook/index?category=staffs') ?>"
+								   class="nav-link <?= strtolower(@$page_data['module']) == 'yearbook' && (strtolower(@$page_data['section']) == 'index') && $_GET['category'] == 'staffs' ? 'active' : null; ?>">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Staffs</p>
 								</a>
@@ -155,30 +132,30 @@
 					</li>
 
 
-					<li class="nav-item <?= strtolower(@$page_data['module']) == 'announcements' ? 'menu-open' : null; ?>">
-						<a href="#"
-						   class="nav-link <?= strtolower(@$page_data['module']) == 'announcements' ? 'active' : null; ?>">
-							<i class="nav-icon fas fa-list"></i>
-							<p>
-								Announcements
-								<i class="fas fa-angle-left right"></i>
-							</p>
-						</a>
-						<ul class="nav nav-treeview">
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="far fa-circle nav-icon"></i>
-									<p>Add</p>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="far fa-circle nav-icon"></i>
-									<p>Manage</p>
-								</a>
-							</li>
-						</ul>
-					</li>
+					<!--					<li class="nav-item --><?php //= strtolower(@$page_data['module']) == 'announcements' ? 'menu-open' : null; ?><!--">-->
+					<!--						<a href="#"-->
+					<!--						   class="nav-link --><?php //= strtolower(@$page_data['module']) == 'announcements' ? 'active' : null; ?><!--">-->
+					<!--							<i class="nav-icon fas fa-list"></i>-->
+					<!--							<p>-->
+					<!--								Announcements-->
+					<!--								<i class="fas fa-angle-left right"></i>-->
+					<!--							</p>-->
+					<!--						</a>-->
+					<!--						<ul class="nav nav-treeview">-->
+					<!--							<li class="nav-item">-->
+					<!--								<a href="#" class="nav-link">-->
+					<!--									<i class="far fa-circle nav-icon"></i>-->
+					<!--									<p>Add</p>-->
+					<!--								</a>-->
+					<!--							</li>-->
+					<!--							<li class="nav-item">-->
+					<!--								<a href="#" class="nav-link">-->
+					<!--									<i class="far fa-circle nav-icon"></i>-->
+					<!--									<p>Manage</p>-->
+					<!--								</a>-->
+					<!--							</li>-->
+					<!--						</ul>-->
+					<!--					</li>-->
 
 					<li class="nav-item <?= strtolower(@$page_data['module']) == 'reports' ? 'menu-open' : null; ?>">
 						<a href="#"
@@ -190,14 +167,15 @@
 							</p>
 						</a>
 						<ul class="nav nav-treeview">
+							<!--							<li class="nav-item">-->
+							<!--								<a href="-->
+							<?php //= site_url('students/form') ?><!--" class="nav-link">-->
+							<!--									<i class="far fa-circle nav-icon"></i>-->
+							<!--									<p>Activity Logs</p>-->
+							<!--								</a>-->
+							<!--							</li>-->
 							<li class="nav-item">
-								<a href="<?= site_url('students/form') ?>" class="nav-link">
-									<i class="far fa-circle nav-icon"></i>
-									<p>Activity Logs</p>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="<?= site_url('students/form') ?>" class="nav-link">
+								<a href="<?= site_url('dashboard/backup_db') ?>" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Backup Database</p>
 								</a>
@@ -206,7 +184,7 @@
 					</li>
 				<?php else: ?>
 					<li class="nav-item">
-						<a href="<?= site_url('dashboard/admin_main') ?>"
+						<a href="<?= site_url('dashboard/student_main') ?>"
 						   class="nav-link <?= strtolower(@$page_data['module']) == 'dashboard' && (strtolower(@$page_data['section']) == 'index') ? 'active' : null; ?>">
 							<i class="nav-icon fa fa-home"></i>
 							<p>
@@ -215,10 +193,21 @@
 						</a>
 					</li>
 
+					<li class="nav-item">
+						<a href="<?= site_url('students/update_profile_as_student') ?>"
+						   class="nav-link <?= strtolower(@$page_data['module']) == 'students' && (strtolower(@$page_data['section']) == 'update profile as student') ? 'active' : null; ?>">
+							<i class="nav-icon fa fa-user"></i>
+							<p>
+								Update My Information
+							</p>
+						</a>
+					</li>
+
+
 					<li class="nav-item <?= strtolower(@$page_data['module']) == 'yearbook' ? 'menu-open' : null; ?>">
 						<a href="#"
 						   class="nav-link <?= strtolower(@$page_data['module']) == 'yearbook' ? 'active' : null; ?>">
-							<i class="nav-icon fas fa-list"></i>
+							<i class="nav-icon fas fa-book"></i>
 							<p>
 								Yearbook
 								<i class="fas fa-angle-left right"></i>
@@ -226,25 +215,22 @@
 						</a>
 						<ul class="nav nav-treeview">
 							<li class="nav-item">
-								<a href="<?= site_url('yearbook') ?>" class="nav-link <?= strtolower(@$page_data['module']) == 'yearbook' && (strtolower(@$page_data['section']) == 'index') ? 'active' : null; ?>">
+								<a href="<?= site_url('yearbook/index?category=students') ?>"
+								   class="nav-link <?= strtolower(@$page_data['module']) == 'yearbook' && (strtolower(@$page_data['section']) == 'index') && $_GET['category'] == 'students' ? 'active' : null; ?>">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Students</p>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link">
+								<a href="<?= site_url('yearbook/index?category=honor_students') ?>"
+								   class="nav-link <?= strtolower(@$page_data['module']) == 'yearbook' && (strtolower(@$page_data['section']) == 'index') && $_GET['category'] == 'honor_students' ? 'active' : null; ?>">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Honor Students</p>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="far fa-circle nav-icon"></i>
-									<p>Organizations</p>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
+								<a href="<?= site_url('yearbook/index?category=staffs') ?>"
+								   class="nav-link <?= strtolower(@$page_data['module']) == 'yearbook' && (strtolower(@$page_data['section']) == 'index') && $_GET['category'] == 'staffs' ? 'active' : null; ?>">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Staffs</p>
 								</a>

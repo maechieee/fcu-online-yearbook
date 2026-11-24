@@ -51,8 +51,37 @@ class Staffs extends CI_Controller
 	public function form($id = null)
 	{
 		if ($post_data = $this->input->post()) {
+			$photo_1_file = null;
+			$config['upload_path'] = 'assets/uploads/photo/';
+			$config['allowed_types'] = 'jpg|jpeg|png|gif';
+			$config['encrypt_name'] = true;
+			$config['max_size'] = '10000000000'; // max_size in kb
+
+			if (!empty($_FILES['photo_1']['name'])) {
+				$config['file_name'] = $_FILES['photo_1']['name'];
+				$this->load->library('upload', $config);
+
+				// File upload
+				if ($this->upload->do_upload('photo_1')) {
+					if (!is_dir('assets/uploads/photo')) {
+						mkdir('assets/uploads/photo', 0755);
+					}
+					// Get data about the file
+					$upload_data = $this->upload->data();
+					$photo_1_file = $upload_data['file_name'];
+				} else {
+					exit(json_encode(
+						array(
+							'status' => RESULT_FAILED,
+							'message' => 'Failed to upload photo.'
+						)
+					));
+				}
+			}
+
 			if (!empty($id)) {
 				$staff_data = array(
+						'id_number' => $post_data['id_number'],
 						'email_address' => $post_data['email_address'],
 						'is_activated' => $post_data['is_activated'],
 						'first_name' => $post_data['first_name'],
@@ -63,6 +92,11 @@ class Staffs extends CI_Controller
 						'address' => $post_data['address'],
 						'contact_no' => $post_data['contact_no']
 					) + $this->_update_additional;
+
+				if (!empty($photo_1_file)) {
+					$staff_data['picture_1'] = $photo_1_file;
+				}
+
 				$this->M_users->update($staff_data, $id);
 				exit(json_encode(array(
 					'status' => RESULT_SUCCESS,
@@ -84,6 +118,10 @@ class Staffs extends CI_Controller
 					'address' => $post_data['address'],
 					'contact_no' => $post_data['contact_no']
 				) + $this->_create_additional;
+
+			if (!empty($photo_1_file)) {
+				$staff_data['picture_1'] = $photo_1_file;
+			}
 			$this->M_users->insert($staff_data);
 			exit(json_encode(array(
 				'status' => RESULT_SUCCESS,
@@ -109,6 +147,26 @@ class Staffs extends CI_Controller
 		);
 		$this->load->view('layouts/dashboard/head', $data);
 		$this->load->view('modules/staffs/form', $data);
+		$this->load->view('layouts/dashboard/foot', $data);
+	}
+
+	public function view($id)
+	{
+		$data['info'] = $info = $this->M_users->get($id);
+		if (empty($info)) {
+			show_404();
+			die();
+		}
+
+		$data['page_data'] = array(
+			'module' => 'Staffs',
+			'section' => 'View Staff',
+			'scripts_path' => array(
+				'modules/staffs/footer_view'
+			)
+		);
+		$this->load->view('layouts/dashboard/head', $data);
+		$this->load->view('modules/staffs/view', $data);
 		$this->load->view('layouts/dashboard/foot', $data);
 	}
 

@@ -19,11 +19,27 @@ class Users_model extends CI_Model
 
 	public function get_all_by_role_id($role_id)
 	{
-		return $this->db->where('role_id', $role_id)
-			->where('deleted_at', null)
-			->get($this->_table_name)
+		return $this->db->select('a.*, b.name department_name')
+			->from($this->_table_name . ' a')
+			->join('departments b', 'a.department_id = b.id', 'left')
+			->where('a.role_id', $role_id)
+			->where('a.deleted_at', null)
+			->get()
 			->result_array();
 	}
+
+	public function get_all_honor_students()
+	{
+		return $this->db->select('a.*, b.name department_name')
+			->from($this->_table_name . ' a')
+			->join('departments b', 'a.department_id = b.id', 'left')
+			->where('a.role_id', ROLE_STUDENT)
+			->where('a.honor !=', null)
+			->where('a.deleted_at', null)
+			->get()
+			->result_array();
+	}
+
 
 	public function update($data, $id)
 	{
@@ -66,9 +82,12 @@ class Users_model extends CI_Model
 
 	public function get($id)
 	{
-		return $this->db->where('id', $id)
-			->where('deleted_at', null)
-			->get($this->_table_name)
+		return $this->db->select('a.*, b.name department_name')
+			->from($this->_table_name . ' a')
+			->join('departments b', 'a.department_id = b.id', 'left')
+			->where('a.id', $id)
+			->where('a.deleted_at', null)
+			->get()
 			->row_array();
 	}
 }

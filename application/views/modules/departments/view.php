@@ -54,7 +54,7 @@
 							<div class="col-sm-4">
 								<div class="form-group">
 									<label for="name">Description <code>Required</code></label>
-									<p><?= @$info['description']; ?></p>
+									<p><?= !empty(@$info['description']) ? @$info['description'] : '-'; ?></p>
 								</div>
 							</div>
 						</div>

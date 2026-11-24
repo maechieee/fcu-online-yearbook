@@ -11,8 +11,11 @@ $(function () {
 			url: `${BASE_URL}staffs/form/${$('#id').val()}`,
 			type: 'POST',
 			async: true,
-			data: $(this).serialize(),
+			data: new FormData(this),
 			dataType: 'json',
+			contentType: false,
+			cache: false,
+			processData: false,
 			beforeSend: function () {
 				AmagiLoader.show();
 			},

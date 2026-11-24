@@ -30,6 +30,29 @@ if (!function_exists('count_all')) {
 	}
 }
 
+if (!function_exists('count_all_students')) {
+	function count_all_students()
+	{
+		$ci = &get_instance();
+		return $ci->db->where('role_id', ROLE_STUDENT)
+			->where('deleted_at', null)
+			->get('users')
+			->num_rows();
+	}
+}
+
+if (!function_exists('count_all_honor_students')) {
+	function count_all_honor_students()
+	{
+		$ci = &get_instance();
+		return $ci->db->where('role_id', ROLE_STUDENT)
+			->where('honor !=', null)
+			->where('deleted_at', null)
+			->get('users')
+			->num_rows();
+	}
+}
+
 if (!function_exists('get_name_by_id')) {
 	function get_name_by_id($id, $table_name)
 	{

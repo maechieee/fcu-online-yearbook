@@ -36,7 +36,7 @@
 			<div class="card-body">
 				<div class="row">
 					<div class="col-sm-12">
-						<form id="form" role="form" method="post">
+						<form id="form" role="form" method="post" enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-sm-12">
 									<h4>Account Information</h4>
@@ -176,6 +176,14 @@
 										<input type="text" id="address" name="address"
 											   class="form-control"
 											   placeholder="Enter address" value="<?= @$info['address']; ?>" required>
+									</div>
+								</div>
+
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label for="photo_1" class="form-label">Cover Photo</label>
+										<input type="file" class="form-control" id="photo_1" name="photo_1"
+											   placeholder="Cover Photo">
 									</div>
 								</div>
 							</div>

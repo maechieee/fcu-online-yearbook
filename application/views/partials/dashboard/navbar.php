@@ -27,12 +27,12 @@
 				</li>
 				<!-- Menu Footer-->
 				<li class="user-footer">
-					<button id="btn_update_profile" type="button" class="btn btn-default btn-flat w-100">Update
-						Profile
-					</button>
-					<button id="btn_change_password" type="button" class="btn btn-default btn-flat w-100">Change
-						Password
-					</button>
+<!--					<button id="btn_update_profile" type="button" class="btn btn-default btn-flat w-100">Update-->
+<!--						Profile-->
+<!--					</button>-->
+<!--					<button id="btn_change_password" type="button" class="btn btn-default btn-flat w-100">Change-->
+<!--						Password-->
+<!--					</button>-->
 					<a href="<?= site_url('auth/logout') ?>" class="btn btn-default btn-flat w-100">Sign out</a>
 				</li>
 			</ul>
@@ -40,11 +40,6 @@
 		<li class="nav-item">
 			<a class="nav-link" data-widget="fullscreen" href="#" role="button">
 				<i class="fas fa-expand-arrows-alt"></i>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-				<i class="fas fa-th-large"></i>
 			</a>
 		</li>
 	</ul>

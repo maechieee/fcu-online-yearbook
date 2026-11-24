@@ -27,6 +27,29 @@ class Dashboard extends CI_Controller
 		);
 	}
 
+	public function backup_db()
+	{
+		$this->load->dbutil();
+
+		$prefs = array(
+			'format' => 'zip',
+			'filename' => 'fcu_yearbook_db.sql'
+		);
+
+
+		$backup =& $this->dbutil->backup($prefs);
+
+		$db_name = 'backup-on-' . date("Y-m-d-H-i-s") . '.zip';
+		$save = site_url('database/' . $db_name);
+
+		$this->load->helper('file');
+		write_file($save, $backup);
+
+
+		$this->load->helper('download');
+		force_download($db_name, $backup);
+	}
+
 	public function admin_main() {
 		$data['page_data'] = array(
 			'module' => 'Dashboard',
